@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#050e0c" />
+<title>Amirul Fahmi Ash-Shiddiqie — GIS Analyst · Cadastral Surveyor · Geospatial Developer</title>
+<meta name="description" content="Portfolio of Amirul Fahmi Ash-Shiddiqie: GIS analysis, cadastral surveying, remote sensing, and WebGIS development across government, survey, and community projects in Indonesia." />
+<meta property="og:title" content="Amirul Fahmi Ash-Shiddiqie — Geospatial Portfolio" />
+<meta property="og:description" content="GIS Analyst · Cadastral Surveyor · Geospatial Developer" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/no2-tuban.jpg" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top"><span class="brand-mark">AF</span><span>Amirul Fahmi</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="#about" data-nav>About</a>
+      <a href="#career-map" data-nav>Career Map</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#case-studies" data-nav>Case Studies</a>
+      <a href="#gallery" data-nav>Gallery</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Change language"><span class="active" data-lang="en">EN</span><span data-lang="id">ID</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-frame" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-contours" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="none">
+        <path d="M -50 650 Q 250 550 500 640 T 1250 600" />
+        <path d="M -50 700 Q 280 610 560 690 T 1250 660" />
+        <path d="M -50 740 Q 300 660 600 730 T 1250 710" />
+        <path d="M -50 200 Q 300 120 600 190 T 1250 160" />
+        <path d="M -50 250 Q 320 170 640 240 T 1250 210" />
+      </svg>
+    </div>
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <span class="coord-tag mono"><span class="dot"></span><span id="heroCoord">07°45'56"S 110°22'42"E — SLEMAN, DIY</span></span>
+        <h1 id="heroName">Amirul Fahmi<br/>Ash-Shiddiqie</h1>
+        <div class="role-stack" id="heroRoles">
+          <span class="role-chip">GIS Analyst</span>
+          <span class="role-chip">Cadastral Surveyor</span>
+          <span class="role-chip">Geospatial Developer</span>
+        </div>
+        <p class="lede" id="heroLede">Turning GNSS field measurements, satellite imagery, and spatial datasets into cadastral maps, environmental analysis, and WebGIS products used by government offices, survey firms, and communities across Indonesia.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#career-map"><span id="ctaMap">Explore the career map</span></a>
+          <a class="btn ghost" id="resumeLink" href="assets/Amirul-Fahmi-CV.docx" download><span id="ctaCV">Download CV</span></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="map-plate">
+          <img src="assets/amirul-profile.jpg" alt="Portrait of Amirul Fahmi Ash-Shiddiqie" />
+          <div class="plate-scan" aria-hidden="true"></div>
+          <div class="north-badge" aria-hidden="true">N ↑</div>
+          <div class="plate-meta">
+            <div><small>DATUM WGS84</small><strong>AF · 2026</strong></div>
+            <div class="plate-scale">
+              <span class="scale-bar" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+              <small class="mono" style="color:var(--muted);font-size:9px">1 : 25,000</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container stat-plate" id="statPlate"></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container about-layout">
+      <div>
+        <p class="eyebrow" id="aboutEyebrow">Profile</p>
+        <h2 id="aboutHeading">About</h2>
+        <div class="about-copy"><p id="aboutText"></p></div>
+      </div>
+      <div>
+        <div class="about-figures">
+          <dl id="aboutFigures"></dl>
+        </div>
+        <div class="capability-grid" id="capabilityGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAREER JOURNEY WEBGIS ============ -->
+  <section class="section section-alt" id="career-map">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" id="careerEyebrow">Interactive career journey WebGIS</p>
+        <h2 id="careerHeading">Explore where the work happened</h2>
+        <p id="careerSub">Every marker is a real institution, village, or field site — education, government, cadastral survey, disaster response, and community mapping. Switch basemaps, filter by category, and click a marker for the full record.</p>
+      </div>
+      <div class="career-toolbar">
+        <div class="legend-row" id="legendRow"></div>
+        <div class="basemap-row" id="basemapRow">
+          <button data-basemap="street" class="active">Street</button>
+          <button data-basemap="satellite">Satellite</button>
+          <button data-basemap="dark">Dark</button>
+        </div>
+      </div>
+      <div class="career-layout">
+        <div id="careerMap"></div>
+        <div class="career-panel" id="careerPanel">
+          <div class="cp-empty"><span>⌖</span><span id="cpEmptyText">Click a marker on the map to open its full career record.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" id="expEyebrow">Professional experience</p>
+        <h2 id="expHeading">Field execution to office delivery</h2>
+        <p id="expSub">Six roles spanning cadastral survey, government internships, and community-led mapping, each with its own project, responsibilities, and delivered result.</p>
+      </div>
+      <div class="exp-grid" id="expGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDIES ============ -->
+  <section class="section section-alt" id="case-studies">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" id="caseEyebrow">Selected GIS case studies</p>
+        <h2 id="caseHeading">From problem to spatial output</h2>
+        <p id="caseSub">Seven projects broken into overview, problem, methodology, data, tools, and output — the way a technical case study should read.</p>
+      </div>
+      <div class="case-list" id="caseList"></div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" id="galEyebrow">GIS output gallery</p>
+        <h2 id="galHeading">Mapping and spatial-analysis output</h2>
+        <p id="galSub">Selected outputs from survey documentation, mapping, remote sensing, environmental GIS, disaster mapping, and community projects.</p>
+      </div>
+      <div class="gallery-filters" id="galleryFilters"></div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" id="skillsEyebrow">Technical skills</p>
+        <h2 id="skillsHeading">Tools across field, lab, and browser</h2>
+      </div>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" id="eduEyebrow">Education</p>
+        <h2 id="eduHeading">Academic foundation</h2>
+      </div>
+      <div class="edu-grid" id="eduGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ LEADERSHIP + ACHIEVEMENTS ============ -->
+  <section class="section section-alt" id="recognition">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow" id="leadEyebrow">Organizational leadership</p>
+        <h2 id="leadHeading" style="font-family:var(--font-head);font-size:26px;margin:0 0 18px">Beyond the technical work</h2>
+        <div class="leadership-list" id="leadershipList"></div>
+      </div>
+      <div>
+        <p class="eyebrow" id="achEyebrow">Recognition</p>
+        <h2 id="achHeading" style="font-family:var(--font-head);font-size:26px;margin:0 0 18px">Achievements</h2>
+        <div class="achieve-list" id="achieveList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-panel">
+        <div>
+          <h2 id="contactHeading">Looking for a GIS analyst, cadastral surveyor, or geospatial developer?</h2>
+          <p id="contactSub">Open to full-time roles, freelance cadastral survey work, and geospatial project collaboration.</p>
+        </div>
+        <div class="contact-actions" id="contactActions"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand" href="#top"><span class="brand-mark">AF</span><span>Amirul Fahmi</span></a>
+      <p id="footerTagline">GIS analysis, cadastral surveying, remote sensing, and WebGIS development.</p>
+    </div>
+    <div class="footer-links" id="footerLinks"></div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+  <div class="lightbox-inner">
+    <img id="lightboxImg" src="" alt="" />
+    <div class="lightbox-meta" id="lightboxMeta"></div>
+    <div class="lightbox-cap" id="lightboxCap"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="script.js" defer></script>
+</body>
+</html>
